@@ -1,0 +1,15 @@
+version: '3.4'
+
+networks:
+  default:
+    driver: bridge
+
+services:
+  api-operacoes:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    networks:
+      - default
